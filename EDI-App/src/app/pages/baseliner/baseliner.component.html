@@ -1,0 +1,44 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzTheme="light"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Overlay" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/baseliner/recipe">Recipe</a>
+          </li>
+          <li nz-menu-item >
+            <a routerLink="/baseliner/report">Report</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+        <a routerLink="" class="back-button" nz-button nzType="default"><i nz-icon nzType="left" nzTheme="outline"></i>Back</a>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+<!--        <app-tool-bar></app-tool-bar>-->
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+
+

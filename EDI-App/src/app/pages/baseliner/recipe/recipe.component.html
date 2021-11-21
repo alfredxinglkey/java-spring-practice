@@ -1,0 +1,38 @@
+<div class="send-request">
+  <div class="tool-bar">
+    <button class="tool-button" nz-button nzType="primary" (click)="onRetrieve()">Retrieve</button>
+    <button class="tool-button" nz-button nzType="primary" (click)="onUpload()">Upload</button>
+    <button class="tool-button" nz-button nzType="primary" [disabled]="canDownload" (click)="onDownload()">Download</button>
+    <button class="tool-button" nz-button nzDanger nzType="primary" [disabled]="canDelete" (click)="onDelete()">Delete</button>
+  </div>
+</div>
+
+<nz-table
+  #rowSelectionTable
+  nzShowPagination
+  nzShowSizeChanger
+  [nzData]="recipes"
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+>
+  <thead>
+  <tr>
+    <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+    <th>No.</th>
+    <th>Name</th>
+    <th>UpdatedAt</th>
+    <th>IsValid</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let recipe of rowSelectionTable.data">
+    <td
+      [nzChecked]="setOfCheckedId.has(recipe.Id)"
+      (nzCheckedChange)="onItemChecked(recipe.Id, $event)"
+    ></td>
+    <td>{{ recipe.Id }}</td>
+    <td>{{ recipe.Name }}</td>
+    <td>{{ recipe.UpdateAt }}</td>
+    <td>{{ recipe.IsValid }}</td>
+  </tr>
+  </tbody>
+</nz-table>

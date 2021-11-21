@@ -1,0 +1,16 @@
+<nz-card [nzCover]="coverTemplate"
+         [nzHoverable]="true"
+         [nzActions]="[actionSetting]">
+  <nz-card-meta
+    [nzDescription]="page.name"
+  ></nz-card-meta>
+</nz-card>
+
+
+<ng-template #coverTemplate>
+  <img alt="example" src="../../../../assets/images/smee_001.jpeg" />
+</ng-template>
+
+<ng-template #actionSetting>
+  <a [routerLink]="page.router"  routerLinkActive=".active"><i nz-icon nzType="right"></i></a>
+</ng-template>
