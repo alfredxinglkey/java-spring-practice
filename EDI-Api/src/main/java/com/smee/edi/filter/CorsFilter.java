@@ -1,4 +1,4 @@
-package filter;
+package com.smee.edi;
 
 import org.springframework.stereotype.Component;
 

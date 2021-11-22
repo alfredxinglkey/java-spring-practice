@@ -13,7 +13,7 @@ import java.util.List;
 @Api(value = "EDI Controller")
 @RestController
 @RequestMapping("edi")
-@CrossOrigin
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EDIController {
 
     //region Fields

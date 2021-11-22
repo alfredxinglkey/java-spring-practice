@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ediApi: "http://localhost:8888/api/edi"
+  ediApi: "http://localhost:8888/api/edi/"
 };
 
 /*

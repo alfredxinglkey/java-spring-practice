@@ -22,7 +22,7 @@ export class BaselinerService {
   //#region Public Methods
 
   retrieveRecipe(){
-    let retrieveApi = environment.ediApi + "baseliner/recipe";
+    let retrieveApi = environment.ediApi + "recipe";
     return this.http.get<Recipe>(retrieveApi).pipe(
       catchError(this.handleError)
     );
